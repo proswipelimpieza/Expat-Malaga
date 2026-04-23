@@ -13,7 +13,7 @@ const STARTER_STEPS = [
   {
     n: "02",
     title: "Trouver un logement",
-    desc: "Idealista, garanties, quartiers qui valent le coup.",
+    desc: "Plateformes, garanties, quartiers qui valent le coup.",
     href: "/s-installer/trouver-appartement-malaga",
   },
   {
@@ -181,8 +181,8 @@ export default function HomePage() {
               <span className="font-semibold text-forest">
                 Outils recommandés
               </span>{" "}
-              <span className="text-ink/50">—</span> Wise, N26, April, Idealista :
-              les services qu'on utilise vraiment. Certains liens sont affiliés.{" "}
+              <span className="text-ink/50">—</span> N26 : le service qu'on
+              utilise vraiment. Certains liens sont affiliés.{" "}
               <Link
                 href="/mentions-legales"
                 className="underline decoration-forest/30 hover:decoration-forest"

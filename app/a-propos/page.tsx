@@ -45,10 +45,9 @@ export default function AboutPage() {
           nous connaissons : Málaga en priorité, Séville, Grenade, Cordoue.
         </li>
         <li>
-          <strong>Recommandations honnêtes.</strong> Nous citons Wise, N26,
-          April International, Idealista et d'autres outils parce que nous les
-          utilisons nous-mêmes. Détails sur notre politique de partenariats
-          dans les{" "}
+          <strong>Recommandations honnêtes.</strong> Nous citons N26 et
+          d'autres outils parce que nous les utilisons nous-mêmes. Détails
+          sur notre politique de partenariats dans les{" "}
           <Link href="/mentions-legales" className="text-terracotta-dark underline">
             mentions légales
           </Link>
