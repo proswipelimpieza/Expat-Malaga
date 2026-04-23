@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p \"C:/Users/usuario/Desktop/EXPAT/content/actualites\")",
+      "Bash(mkdir -p \"C:/Users/usuario/Desktop/EXPAT/.claude/agents\")",
+      "Bash(mkdir -p \"C:/Users/usuario/Desktop/EXPAT/.github/workflows\")",
+      "Bash(mkdir -p \"C:/Users/usuario/Desktop/EXPAT/scripts\")"
+    ]
+  }
+}

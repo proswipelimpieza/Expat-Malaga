@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1A3A2A"/>
+      <stop offset="55%" stop-color="#2A5540"/>
+      <stop offset="100%" stop-color="#E8916A"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#g)"/>
+  <g fill="#F5F0E8" font-family="Georgia, serif">
+    <text x="80" y="300" font-size="92" font-weight="700">Expat Málaga</text>
+    <text x="80" y="370" font-size="36" opacity="0.9">Le guide des expatriés français en Andalousie</text>
+    <text x="80" y="560" font-size="22" opacity="0.7">expat-malaga.com</text>
+  </g>
+</svg>
