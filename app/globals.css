@@ -18,6 +18,7 @@ html {
  * tile dot-pattern, both inlined as data-URIs so no extra HTTP request.
  */
 body {
+  overflow-x: hidden;
   background-color: var(--color-cream);
   background-image:
     /* Andalusian ceramic dot-grid — very soft forest-green */
