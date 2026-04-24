@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "Mentions légales & affiliation",
   description:
     "Mentions légales, politique de liens affiliés et conditions d'utilisation d'Expat Málaga.",
-  alternates: { canonical: "https://expat-malaga.com/mentions-legales" },
+  alternates: { canonical: "https://expatmalaga.org/mentions-legales" },
   robots: { index: true, follow: true },
 };
 

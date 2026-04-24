@@ -20,12 +20,12 @@ export function generateMetadata({ params }: PageProps): Metadata {
     title: `${cat.label} — tous nos articles`,
     description: cat.description,
     alternates: {
-      canonical: `https://expat-malaga.com/categorie/${params.category}`,
+      canonical: `https://expatmalaga.org/categorie/${params.category}`,
     },
     openGraph: {
       title: `${cat.label} — Expat Málaga`,
       description: cat.description,
-      url: `https://expat-malaga.com/categorie/${params.category}`,
+      url: `https://expatmalaga.org/categorie/${params.category}`,
     },
   };
 }

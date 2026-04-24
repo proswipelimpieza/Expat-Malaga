@@ -2,7 +2,6 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Link from "next/link";
 import Sidebar from "@/components/Sidebar";
-import AffiliateCard from "@/components/AffiliateCard";
 import SmartImage from "@/components/SmartImage";
 import { renderMDX } from "@/lib/mdx";
 import {
@@ -77,7 +76,7 @@ export async function generateMetadata({
   const article = getArticle(params.category as Category, params.slug);
   if (!article) return {};
   const { title, description, date } = article.frontmatter;
-  const url = `https://expat-malaga.com/${params.category}/${params.slug}`;
+  const url = `https://expatmalaga.org/${params.category}/${params.slug}`;
   return {
     title,
     description,
@@ -115,16 +114,16 @@ export default async function ArticlePage({ params }: PageProps) {
     author: {
       "@type": "Organization",
       name: "Expat Málaga",
-      url: "https://expat-malaga.com",
+      url: "https://expatmalaga.org",
     },
     publisher: {
       "@type": "Organization",
       name: "Expat Málaga",
-      url: "https://expat-malaga.com",
+      url: "https://expatmalaga.org",
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `https://expat-malaga.com/${category}/${article.frontmatter.slug}`,
+      "@id": `https://expatmalaga.org/${category}/${article.frontmatter.slug}`,
     },
     articleSection: cat.label,
   };
@@ -195,25 +194,6 @@ export default async function ArticlePage({ params }: PageProps) {
           <div className="prose-editorial max-w-prose text-[17px]">
             {content}
           </div>
-
-          {article.frontmatter.affiliateLinks &&
-            article.frontmatter.affiliateLinks.length > 0 && (
-              <section className="mt-12 border-t border-forest/10 pt-8">
-                <h3 className="font-display text-2xl text-forest mb-4">
-                  Les partenaires cités dans cet article
-                </h3>
-                <div className="grid sm:grid-cols-2 gap-4">
-                  {article.frontmatter.affiliateLinks.map((a) => (
-                    <AffiliateCard
-                      key={a.name}
-                      name={a.name}
-                      url={a.url}
-                      description={a.description || a.commission || ""}
-                    />
-                  ))}
-                </div>
-              </section>
-            )}
 
         </div>
 

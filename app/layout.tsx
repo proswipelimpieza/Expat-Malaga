@@ -35,14 +35,14 @@ export const metadata: Metadata = {
     siteName: "Expat Málaga",
     locale: "fr_FR",
     type: "website",
-    images: ["/og-default.png"],
+    images: ["/images/hero/malaga-beach.jpg"],
   },
   twitter: {
     card: "summary_large_image",
     title: "Expat Málaga",
     description:
       "Le guide indépendant des Français qui s'installent en Andalousie.",
-    images: ["/og-default.png"],
+    images: ["/images/hero/malaga-beach.jpg"],
   },
   robots: { index: true, follow: true },
   alternates: { canonical: SITE_URL },

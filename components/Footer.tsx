@@ -59,7 +59,7 @@ export default function Footer() {
       <div className="border-t border-cream/10">
         <div className="mx-auto max-w-6xl px-4 py-6 text-xs text-cream/50 flex flex-col md:flex-row md:justify-between md:items-center gap-2">
           <p>
-            © {new Date().getFullYear()} Expat Málaga — expat-malaga.com · Site
+            © {new Date().getFullYear()} Expat Málaga — expatmalaga.org · Site
             indépendant, sans lien avec les administrations espagnoles ou
             françaises.
           </p>

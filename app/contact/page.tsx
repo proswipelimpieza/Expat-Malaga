@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: "Contact",
   description:
     "Une question, une correction, une bonne adresse à partager ? Écrivez-nous.",
-  alternates: { canonical: "https://expat-malaga.com/contact" },
+  alternates: { canonical: "https://expatmalaga.org/contact" },
 };
 
 export default function ContactPage() {
