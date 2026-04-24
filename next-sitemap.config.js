@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: process.env.SITE_URL || "https://expat-malaga.com",
+  siteUrl: process.env.SITE_URL || "https://expatmalaga.org",
   generateRobotsTxt: false,
   sitemapSize: 5000,
   changefreq: "weekly",

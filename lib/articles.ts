@@ -11,13 +11,6 @@ export type Category =
   | "travail-visa"
   | "actualites";
 
-export type AffiliateLink = {
-  name: string;
-  url: string;
-  commission?: string;
-  description?: string;
-};
-
 export type ArticleFrontmatter = {
   title: string;
   description: string;
@@ -25,7 +18,6 @@ export type ArticleFrontmatter = {
   slug: string;
   date: string;
   readTime?: string;
-  affiliateLinks?: AffiliateLink[];
   /**
    * Optional hero image URL. When provided, overrides the automatic
    * Unsplash-keyword image in article headers and cards. Use any public URL
