@@ -77,6 +77,7 @@ export async function generateMetadata({
   if (!article) return {};
   const { title, description, date } = article.frontmatter;
   const url = `https://expatmalaga.org/${params.category}/${params.slug}`;
+  const ogImage = `https://expatmalaga.org/api/og?title=${encodeURIComponent(title)}&category=${encodeURIComponent(params.category)}`;
   return {
     title,
     description,
@@ -88,8 +89,14 @@ export async function generateMetadata({
       type: "article",
       publishedTime: date,
       locale: "fr_FR",
+      images: [{ url: ogImage, width: 1200, height: 630, alt: title }],
     },
-    twitter: { card: "summary_large_image", title, description },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [ogImage],
+    },
   };
 }
 
@@ -169,7 +176,7 @@ export default async function ArticlePage({ params }: PageProps) {
               {cat.label}
             </Link>
           </nav>
-          <h1 className="font-display text-4xl md:text-5xl leading-tight max-w-3xl">
+          <h1 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight max-w-3xl">
             {article.frontmatter.title}
           </h1>
           <p className="mt-4 text-white/90 max-w-2xl leading-relaxed">

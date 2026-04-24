@@ -19,7 +19,7 @@ const STARTER_STEPS = [
   {
     n: "03",
     title: "Ouvrir un compte bancaire",
-    desc: "Banque espagnole ou N26 ? Le match.",
+    desc: "Banque traditionnelle ou néo-banque ? Le match.",
     href: "/s-installer/ouvrir-compte-bancaire-espagne",
   },
   {
@@ -67,14 +67,14 @@ export default function HomePage() {
           aria-hidden
         />
 
-        <div className="relative mx-auto max-w-6xl px-4 py-20 md:py-28 grid md:grid-cols-2 gap-10 items-center">
+        <div className="relative mx-auto max-w-6xl px-4 py-10 sm:py-16 md:py-28 grid md:grid-cols-2 gap-8 md:gap-10 items-center">
           <div>
             <span className="inline-flex items-center gap-2 rounded-full bg-white/95 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-forest shadow">
               <span className="h-2 w-2 rounded-full bg-terracotta animate-pulse" />
               Guide indépendant · 2025
             </span>
             <h1
-              className="mt-5 font-display text-5xl md:text-6xl leading-tight text-white"
+              className="mt-5 font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight text-white"
               style={{ textShadow: "0 2px 16px rgba(0,0,0,0.45)" }}
             >
               S'installer en{" "}

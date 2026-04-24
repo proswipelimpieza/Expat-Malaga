@@ -2,10 +2,7 @@ import { compileMDX } from "next-mdx-remote/rsc";
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import remarkGfm from "remark-gfm";
-import AffiliateCard from "@/components/AffiliateCard";
-
 export const mdxComponents = {
-  AffiliateCard,
   h2: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h2
       {...props}
