@@ -173,33 +173,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Bandeau partenaires — version compacte, discrète */}
-      <section className="my-12">
-        <div className="mx-auto max-w-6xl px-4">
-          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 rounded-xl border border-forest/15 bg-white/60 px-5 py-4">
-            <p className="text-sm text-ink/75 leading-relaxed">
-              <span className="font-semibold text-forest">
-                Outils recommandés
-              </span>{" "}
-              <span className="text-ink/50">—</span> N26 : le service qu'on
-              utilise vraiment. Certains liens sont affiliés.{" "}
-              <Link
-                href="/mentions-legales"
-                className="underline decoration-forest/30 hover:decoration-forest"
-              >
-                En savoir plus
-              </Link>
-              .
-            </p>
-            <Link
-              href="/a-propos"
-              className="shrink-0 text-sm font-semibold text-terracotta-dark hover:underline whitespace-nowrap"
-            >
-              Notre charte →
-            </Link>
-          </div>
-        </div>
-      </section>
     </>
   );
 }
