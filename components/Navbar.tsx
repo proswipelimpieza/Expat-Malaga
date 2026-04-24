@@ -2,14 +2,18 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { CATEGORIES } from "@/lib/articles";
+
+const navLinks = [
+  { href: "/categorie/s-installer", label: "S'installer" },
+  { href: "/categorie/vie-pratique", label: "Vie pratique" },
+  { href: "/categorie/villes", label: "Villes" },
+  { href: "/categorie/sport", label: "Sport" },
+  { href: "/categorie/travail-visa", label: "Travail & Visa" },
+  { href: "/actualites", label: "Actualités" },
+];
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
-
-  const navLinks = (Object.keys(CATEGORIES) as Array<keyof typeof CATEGORIES>).map(
-    (key) => ({ href: `/categorie/${key}`, label: CATEGORIES[key].label })
-  );
 
   return (
     <header className="sticky top-0 z-40 backdrop-blur bg-cream/85 border-b border-forest/10">
