@@ -38,7 +38,7 @@ export default function HomePage() {
 
   return (
     <>
-      <section className="relative border-b border-forest/10 overflow-hidden">
+      <section className="relative w-full border-b border-forest/10 overflow-hidden">
         {/* Fond : photo de plage de Málaga, légèrement assombrie */}
         <div
           className="absolute inset-0 bg-cover bg-center"
@@ -67,14 +67,14 @@ export default function HomePage() {
           aria-hidden
         />
 
-        <div className="relative mx-auto max-w-6xl px-4 py-10 sm:py-16 md:py-28 grid md:grid-cols-2 gap-8 md:gap-10 items-center">
-          <div>
+        <div className="relative w-full mx-auto max-w-6xl px-4 py-10 sm:py-16 md:py-28 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-center">
+          <div className="min-w-0">
             <span className="inline-flex items-center gap-2 rounded-full bg-white/95 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-forest shadow">
               <span className="h-2 w-2 rounded-full bg-terracotta animate-pulse" />
               Guide indépendant · 2025
             </span>
             <h1
-              className="mt-5 font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight text-white"
+              className="mt-5 font-display text-2xl sm:text-3xl md:text-5xl lg:text-6xl leading-tight text-white break-words"
               style={{ textShadow: "0 2px 16px rgba(0,0,0,0.45)" }}
             >
               S'installer en{" "}
@@ -93,13 +93,13 @@ export default function HomePage() {
             <div className="mt-7 flex flex-col sm:flex-row flex-wrap gap-3">
               <Link
                 href="/categorie/s-installer"
-                className="inline-flex justify-center items-center rounded-lg bg-terracotta px-5 py-3 text-sm font-semibold text-white hover:bg-terracotta-dark shadow-lg"
+                className="inline-flex items-center justify-center rounded-lg bg-terracotta px-5 py-3 text-sm font-semibold text-white hover:bg-terracotta-dark shadow-lg"
               >
                 Commencer par les démarches →
               </Link>
               <Link
                 href="/categorie/villes"
-                className="inline-flex justify-center items-center rounded-lg border border-white/70 bg-white/15 backdrop-blur-sm px-5 py-3 text-sm font-semibold text-white hover:bg-white/25 shadow-lg"
+                className="inline-flex items-center justify-center rounded-lg border border-white/70 bg-white/15 backdrop-blur-sm px-5 py-3 text-sm font-semibold text-white hover:bg-white/25 shadow-lg"
               >
                 Découvrir les villes
               </Link>
@@ -107,7 +107,7 @@ export default function HomePage() {
           </div>
 
           {/* Kit de démarrage — evergreen */}
-          <div className="relative">
+          <div className="relative min-w-0 w-full">
             <div className="relative rounded-2xl bg-white shadow-2xl border border-white/20 overflow-hidden">
               <div className="bg-forest text-cream px-4 sm:px-6 py-4 sm:py-5">
                 <div className="text-[11px] uppercase tracking-[0.2em] text-terracotta">
