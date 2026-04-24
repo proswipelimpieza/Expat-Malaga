@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "À propos",
   description:
     "Expat Málaga est un site indépendant tenu par des expatriés français installés en Andalousie qui partagent leur expérience de terrain.",
-  alternates: { canonical: "https://expat-malaga.com/a-propos" },
+  alternates: { canonical: "https://expatmalaga.org/a-propos" },
 };
 
 export default function AboutPage() {

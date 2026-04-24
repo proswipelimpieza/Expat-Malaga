@@ -17,7 +17,7 @@ const playfair = Playfair_Display({
   display: "swap",
 });
 
-const SITE_URL = "https://expat-malaga.com";
+const SITE_URL = "https://expatmalaga.org";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
