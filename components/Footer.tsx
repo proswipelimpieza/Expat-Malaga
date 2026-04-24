@@ -4,7 +4,7 @@ import { CATEGORIES } from "@/lib/articles";
 export default function Footer() {
   return (
     <footer className="mt-16 border-t border-forest/10 bg-forest text-cream/90">
-      <div className="mx-auto max-w-6xl px-4 py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div className="mx-auto max-w-6xl px-4 py-10 md:py-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
         <div className="md:col-span-2">
           <div className="font-display text-2xl text-cream">
             Expat <span className="text-terracotta">Málaga</span>

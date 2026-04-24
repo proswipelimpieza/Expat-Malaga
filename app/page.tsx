@@ -83,23 +83,23 @@ export default function HomePage() {
               sans se tromper.
             </h1>
             <p
-              className="mt-5 text-lg text-white max-w-xl leading-relaxed"
+              className="mt-5 text-base sm:text-lg text-white max-w-xl leading-relaxed"
               style={{ textShadow: "0 1px 8px rgba(0,0,0,0.6)" }}
             >
               NIE, logement à Málaga, compte bancaire, santé, padel,
               télétravail : des expats partagent leur expérience de terrain
               pour vous aider à franchir le pas.
             </p>
-            <div className="mt-7 flex flex-wrap gap-3">
+            <div className="mt-7 flex flex-col sm:flex-row flex-wrap gap-3">
               <Link
                 href="/categorie/s-installer"
-                className="inline-flex items-center rounded-lg bg-terracotta px-5 py-3 text-sm font-semibold text-white hover:bg-terracotta-dark shadow-lg"
+                className="inline-flex justify-center items-center rounded-lg bg-terracotta px-5 py-3 text-sm font-semibold text-white hover:bg-terracotta-dark shadow-lg"
               >
                 Commencer par les démarches →
               </Link>
               <Link
                 href="/categorie/villes"
-                className="inline-flex items-center rounded-lg border border-white/70 bg-white/15 backdrop-blur-sm px-5 py-3 text-sm font-semibold text-white hover:bg-white/25 shadow-lg"
+                className="inline-flex justify-center items-center rounded-lg border border-white/70 bg-white/15 backdrop-blur-sm px-5 py-3 text-sm font-semibold text-white hover:bg-white/25 shadow-lg"
               >
                 Découvrir les villes
               </Link>
@@ -109,7 +109,7 @@ export default function HomePage() {
           {/* Kit de démarrage — evergreen */}
           <div className="relative">
             <div className="relative rounded-2xl bg-white shadow-2xl border border-white/20 overflow-hidden">
-              <div className="bg-forest text-cream px-6 py-5">
+              <div className="bg-forest text-cream px-4 sm:px-6 py-4 sm:py-5">
                 <div className="text-[11px] uppercase tracking-[0.2em] text-terracotta">
                   Kit de démarrage
                 </div>
@@ -125,7 +125,7 @@ export default function HomePage() {
                   <li key={step.n}>
                     <Link
                       href={step.href}
-                      className="group flex items-center gap-4 px-5 py-4 hover:bg-cream/60 transition"
+                      className="group flex items-center gap-3 sm:gap-4 px-4 sm:px-5 py-4 hover:bg-cream/60 transition"
                     >
                       <span className="h-9 w-9 shrink-0 flex items-center justify-center rounded-full bg-terracotta/10 text-terracotta-dark font-display font-bold text-sm">
                         {step.n}
@@ -155,7 +155,7 @@ export default function HomePage() {
       <section className="py-10">
         <div className="mx-auto max-w-6xl px-4">
           <div className="flex items-end justify-between mb-6">
-            <h2 className="font-display text-3xl md:text-4xl text-forest">
+            <h2 className="font-display text-2xl sm:text-3xl md:text-4xl text-forest">
               Derniers articles
             </h2>
             <Link

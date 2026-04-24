@@ -52,14 +52,14 @@ export default function CategoryPage({ params }: PageProps) {
           }}
           aria-hidden
         />
-        <div className="relative mx-auto max-w-6xl px-4 py-20 md:py-24">
-          <div className="text-4xl mb-3 drop-shadow" aria-hidden>
+        <div className="relative mx-auto max-w-6xl px-4 py-12 sm:py-16 md:py-24">
+          <div className="text-3xl sm:text-4xl mb-2 sm:mb-3" aria-hidden>
             {cat.emoji}
           </div>
-          <h1 className="font-display text-4xl md:text-5xl text-white drop-shadow">
+          <h1 className="font-display text-3xl sm:text-4xl md:text-5xl text-white drop-shadow">
             {cat.label}
           </h1>
-          <p className="mt-4 text-lg text-cream/95 max-w-2xl drop-shadow">
+          <p className="mt-3 sm:mt-4 text-base sm:text-lg text-cream/95 max-w-2xl drop-shadow">
             {cat.description}
           </p>
           <div className="mt-4 text-sm text-white/70">

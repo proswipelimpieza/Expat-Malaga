@@ -85,10 +85,10 @@ export default function ArticleCard({
           {cat.label}
         </span>
       </div>
-      <div className="p-5">
+      <div className="p-4 sm:p-5">
         <h3
           className={`font-display text-forest leading-tight ${
-            featured ? "text-2xl" : "text-xl"
+            featured ? "text-xl sm:text-2xl" : "text-lg sm:text-xl"
           } group-hover:text-terracotta-dark transition-colors`}
         >
           {title}

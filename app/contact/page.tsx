@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <section className="mx-auto max-w-2xl px-4 py-16">
-      <h1 className="font-display text-4xl md:text-5xl text-forest">
+      <h1 className="font-display text-3xl sm:text-4xl md:text-5xl text-forest">
         Nous écrire
       </h1>
       <p className="mt-4 text-ink/80 leading-relaxed">
@@ -21,7 +21,7 @@ export default function ContactPage() {
       </p>
 
       <form
-        className="mt-8 space-y-5 rounded-xl border border-forest/15 bg-white p-6"
+        className="mt-8 space-y-5 rounded-xl border border-forest/15 bg-white p-4 sm:p-6"
         action="https://formspree.io/f/REPLACE_ME"
         method="POST"
         name="contact"

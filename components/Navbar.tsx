@@ -9,7 +9,7 @@ const navLinks = [
   { href: "/categorie/villes", label: "Villes" },
   { href: "/categorie/sport", label: "Sport" },
   { href: "/categorie/travail-visa", label: "Travail & Visa" },
-  { href: "/actualites", label: "Actualités" },
+  { href: "/categorie/actualites", label: "Actualités" },
 ];
 
 export default function Navbar() {
@@ -80,7 +80,7 @@ export default function Navbar() {
 
       {/* Mobile dropdown menu */}
       {open && (
-        <div className="md:hidden border-t border-forest/10 bg-cream/95 backdrop-blur px-4 py-3">
+        <div className="md:hidden border-t border-forest/10 bg-cream/95 backdrop-blur px-4 py-3 max-h-[calc(100vh-56px)] overflow-y-auto">
           <ul className="flex flex-col gap-1 text-sm">
             {navLinks.map((link) => (
               <li key={link.href}>

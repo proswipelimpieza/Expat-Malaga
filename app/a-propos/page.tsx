@@ -11,8 +11,8 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <section className="mx-auto max-w-3xl px-4 py-16 prose-editorial">
-      <div className="gradient-tile-3 rounded-2xl p-10 text-white mb-10">
-        <h1 className="font-display text-4xl md:text-5xl leading-tight">
+      <div className="gradient-tile-3 rounded-2xl p-6 sm:p-10 text-white mb-10">
+        <h1 className="font-display text-3xl sm:text-4xl md:text-5xl leading-tight">
           Des expats qui partagent <br />
           leur expérience.
         </h1>

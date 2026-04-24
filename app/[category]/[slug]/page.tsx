@@ -163,7 +163,7 @@ export default async function ArticlePage({ params }: PageProps) {
           aria-hidden
         />
 
-        <div className="relative z-10 mx-auto max-w-6xl px-4 py-14 md:py-20">
+        <div className="relative z-10 mx-auto max-w-6xl px-4 py-10 sm:py-14 md:py-20">
           <nav className="text-xs text-white/80 mb-4 flex gap-2 items-center">
             <Link href="/" className="hover:underline">
               Accueil
@@ -198,7 +198,7 @@ export default async function ArticlePage({ params }: PageProps) {
 
       <div className="mx-auto max-w-6xl px-4 py-12 grid lg:grid-cols-[1fr_320px] gap-10">
         <div className="min-w-0">
-          <div className="prose-editorial max-w-prose text-[17px]">
+          <div className="prose-editorial max-w-prose text-base sm:text-[17px]">
             {content}
           </div>
 
