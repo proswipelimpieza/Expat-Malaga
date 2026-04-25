@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Link from "next/link";
+import { ChevronRight, Clock, CalendarDays } from "lucide-react";
 import Sidebar from "@/components/Sidebar";
 import SmartImage from "@/components/SmartImage";
 import { renderMDX } from "@/lib/mdx";
@@ -164,14 +165,14 @@ export default async function ArticlePage({ params }: PageProps) {
         />
 
         <div className="relative z-10 mx-auto max-w-6xl px-4 py-10 sm:py-14 md:py-20">
-          <nav className="text-xs text-white/80 mb-4 flex gap-2 items-center">
-            <Link href="/" className="hover:underline">
+          <nav className="text-xs text-white/70 mb-5 flex items-center gap-1" aria-label="Fil d'Ariane">
+            <Link href="/" className="hover:text-white transition-colors">
               Accueil
             </Link>
-            <span aria-hidden>/</span>
+            <ChevronRight size={12} className="opacity-60" aria-hidden />
             <Link
               href={`/categorie/${category}`}
-              className="hover:underline"
+              className="hover:text-white transition-colors"
             >
               {cat.label}
             </Link>
@@ -182,16 +183,22 @@ export default async function ArticlePage({ params }: PageProps) {
           <p className="mt-4 text-white/90 max-w-2xl leading-relaxed">
             {article.frontmatter.description}
           </p>
-          <div className="mt-5 flex items-center gap-3 text-xs text-white/80">
-            <time dateTime={article.frontmatter.date}>
+          <div className="mt-5 flex flex-wrap items-center gap-4 text-xs text-white/75">
+            <time
+              dateTime={article.frontmatter.date}
+              className="inline-flex items-center gap-1.5"
+            >
+              <CalendarDays size={13} className="opacity-80" aria-hidden />
               {new Date(article.frontmatter.date).toLocaleDateString("fr-FR", {
                 day: "numeric",
                 month: "long",
                 year: "numeric",
               })}
             </time>
-            <span aria-hidden>·</span>
-            <span>{article.readingMinutes} min de lecture</span>
+            <span className="inline-flex items-center gap-1.5">
+              <Clock size={13} className="opacity-80" aria-hidden />
+              {article.readingMinutes} min de lecture
+            </span>
           </div>
         </div>
       </header>

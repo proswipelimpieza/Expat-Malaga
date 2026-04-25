@@ -39,12 +39,30 @@ body {
   color: #fff;
 }
 
+/* Accessible focus ring — keyboard navigation */
+:focus-visible {
+  outline: 2px solid var(--color-terracotta);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
 .prose-editorial h1,
 .prose-editorial h2,
 .prose-editorial h3,
 .prose-editorial h4 {
   font-family: var(--font-playfair), Georgia, serif;
   color: var(--color-forest);
+}
+
+/* Smooth image rendering */
+img {
+  image-rendering: -webkit-optimize-contrast;
+}
+
+/* Article reading width — generous but comfortable */
+.prose-editorial {
+  font-size: 1.0625rem; /* 17px */
+  line-height: 1.8;
 }
 
 .gradient-hero {
