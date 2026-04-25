@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import ArticleCard from "@/components/ArticleCard";
 import CategoryNav from "@/components/CategoryNav";
 import { getFeaturedArticles } from "@/lib/articles";
@@ -93,9 +94,9 @@ export default function HomePage() {
             <div className="mt-7 flex flex-col sm:flex-row flex-wrap gap-3">
               <Link
                 href="/categorie/s-installer"
-                className="inline-flex items-center justify-center rounded-lg bg-terracotta px-5 py-3 text-sm font-semibold text-white hover:bg-terracotta-dark shadow-lg"
+                className="inline-flex items-center gap-2 justify-center rounded-lg bg-terracotta px-5 py-3 text-sm font-semibold text-white hover:bg-terracotta-dark shadow-lg transition-colors"
               >
-                Commencer par les démarches →
+                Commencer par les démarches <ArrowRight size={16} />
               </Link>
               <Link
                 href="/categorie/villes"
@@ -138,9 +139,10 @@ export default function HomePage() {
                           {step.desc}
                         </div>
                       </div>
-                      <span className="text-terracotta-dark group-hover:translate-x-1 transition-transform">
-                        →
-                      </span>
+                      <ArrowRight
+                        size={16}
+                        className="text-terracotta-dark group-hover:translate-x-1 transition-transform shrink-0"
+                      />
                     </Link>
                   </li>
                 ))}
@@ -167,7 +169,7 @@ export default function HomePage() {
               href="/categorie/s-installer"
               className="hidden sm:inline-flex items-center gap-1 text-sm font-semibold text-terracotta-dark hover:underline"
             >
-              Voir tout →
+              Voir tout <ArrowRight size={14} />
             </Link>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">

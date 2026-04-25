@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -45,7 +46,7 @@ export default function ContactPage() {
             id="name"
             name="name"
             required
-            className="w-full rounded-md border border-forest/20 bg-cream/50 px-3 py-2 focus:outline-none focus:border-terracotta"
+            className="w-full rounded-lg border border-forest/20 bg-cream/50 px-3 py-2.5 focus:outline-none focus:border-terracotta focus:ring-2 focus:ring-terracotta/15 transition-colors placeholder:text-muted"
           />
         </div>
 
@@ -61,7 +62,7 @@ export default function ContactPage() {
             name="email"
             type="email"
             required
-            className="w-full rounded-md border border-forest/20 bg-cream/50 px-3 py-2 focus:outline-none focus:border-terracotta"
+            className="w-full rounded-lg border border-forest/20 bg-cream/50 px-3 py-2.5 focus:outline-none focus:border-terracotta focus:ring-2 focus:ring-terracotta/15 transition-colors placeholder:text-muted"
           />
         </div>
 
@@ -75,7 +76,7 @@ export default function ContactPage() {
           <select
             id="topic"
             name="topic"
-            className="w-full rounded-md border border-forest/20 bg-cream/50 px-3 py-2 focus:outline-none focus:border-terracotta"
+            className="w-full rounded-lg border border-forest/20 bg-cream/50 px-3 py-2.5 focus:outline-none focus:border-terracotta focus:ring-2 focus:ring-terracotta/15 transition-colors placeholder:text-muted"
           >
             <option>Question sur une démarche</option>
             <option>Correction / mise à jour d'article</option>
@@ -96,15 +97,15 @@ export default function ContactPage() {
             name="message"
             required
             rows={6}
-            className="w-full rounded-md border border-forest/20 bg-cream/50 px-3 py-2 focus:outline-none focus:border-terracotta"
+            className="w-full rounded-lg border border-forest/20 bg-cream/50 px-3 py-2.5 focus:outline-none focus:border-terracotta focus:ring-2 focus:ring-terracotta/15 transition-colors placeholder:text-muted"
           />
         </div>
 
         <button
           type="submit"
-          className="inline-flex items-center rounded-lg bg-forest px-5 py-3 text-sm font-semibold text-cream hover:bg-forest-light"
+          className="inline-flex items-center gap-2 rounded-lg bg-forest px-5 py-3 text-sm font-semibold text-cream hover:bg-forest-light transition-colors shadow-sm"
         >
-          Envoyer →
+          Envoyer <ArrowRight size={16} />
         </button>
       </form>
 
