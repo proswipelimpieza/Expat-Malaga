@@ -1,29 +1,40 @@
 import Link from "next/link";
 import { CATEGORIES } from "@/lib/articles";
+import { CATEGORY_ICONS } from "@/lib/category-icons";
 
 export default function CategoryNav() {
   return (
-    <section className="py-10">
+    <section className="py-12">
       <div className="mx-auto max-w-6xl px-4">
-        <h2 className="font-display text-2xl sm:text-3xl md:text-4xl text-forest mb-6">
-          Explorer par thème
-        </h2>
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
+        <div className="mb-8">
+          <p className="text-xs font-semibold uppercase tracking-[0.15em] text-terracotta mb-1.5">
+            Rubriques
+          </p>
+          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl text-forest">
+            Explorer par thème
+          </h2>
+        </div>
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
           {(Object.keys(CATEGORIES) as Array<keyof typeof CATEGORIES>).map(
             (key) => {
               const cat = CATEGORIES[key];
+              const cfg = CATEGORY_ICONS[key];
+              if (!cfg) return null;
+              const Icon = cfg.icon;
               return (
                 <Link
                   key={key}
                   href={`/categorie/${key}`}
-                  className="group rounded-xl border border-forest/15 bg-white p-3 sm:p-4 text-center transition hover:border-terracotta hover:bg-terracotta/5"
+                  className="group flex flex-col items-center gap-3 rounded-2xl border border-ink/10 bg-white p-3 sm:p-5 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:border-terracotta/30"
                 >
-                  <div className="text-2xl sm:text-3xl mb-1 sm:mb-2" aria-hidden>
-                    {cat.emoji}
+                  <div
+                    className={`inline-flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-xl ${cfg.bg} ${cfg.color} transition-transform duration-300 group-hover:scale-110`}
+                  >
+                    <Icon size={20} strokeWidth={1.75} />
                   </div>
-                  <div className="font-display text-base sm:text-lg text-forest group-hover:text-terracotta-dark">
+                  <span className="font-display text-sm md:text-base text-forest leading-tight group-hover:text-terracotta-dark transition-colors">
                     {cat.label}
-                  </div>
+                  </span>
                 </Link>
               );
             },

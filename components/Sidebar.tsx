@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Article } from "@/lib/articles";
 import { CATEGORIES } from "@/lib/articles";
+import { CATEGORY_ICONS } from "@/lib/category-icons";
 
 type Props = {
   related: Article[];
@@ -9,6 +10,8 @@ type Props = {
 
 export default function Sidebar({ related, current }: Props) {
   const cat = CATEGORIES[current.frontmatter.category];
+  const cfg = CATEGORY_ICONS[current.frontmatter.category];
+  const CatIcon = cfg?.icon;
 
   return (
     <aside className="space-y-8 lg:sticky lg:top-24">
@@ -18,9 +21,10 @@ export default function Sidebar({ related, current }: Props) {
         </div>
         <Link
           href={`/categorie/${current.frontmatter.category}`}
-          className="font-display text-xl text-forest hover:text-terracotta-dark"
+          className="inline-flex items-center gap-2 font-display text-xl text-forest hover:text-terracotta-dark transition-colors"
         >
-          {cat.emoji} {cat.label}
+          {CatIcon && <CatIcon size={18} strokeWidth={1.75} />}
+          {cat.label}
         </Link>
         <p className="mt-2 text-sm text-ink/70 leading-relaxed">
           {cat.description}

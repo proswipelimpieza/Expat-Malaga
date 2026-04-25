@@ -6,6 +6,7 @@ import {
   type Category,
   getArticlesByCategory,
 } from "@/lib/articles";
+import { CATEGORY_ICONS } from "@/lib/category-icons";
 
 type PageProps = { params: { category: string } };
 
@@ -35,6 +36,8 @@ export default function CategoryPage({ params }: PageProps) {
   const category = params.category as Category;
   const cat = CATEGORIES[category];
   const articles = getArticlesByCategory(category);
+  const catCfg = CATEGORY_ICONS[category];
+  const CatIcon = catCfg?.icon;
 
   return (
     <>
@@ -53,9 +56,11 @@ export default function CategoryPage({ params }: PageProps) {
           aria-hidden
         />
         <div className="relative mx-auto max-w-6xl px-4 py-12 sm:py-16 md:py-24">
-          <div className="text-3xl sm:text-4xl mb-2 sm:mb-3" aria-hidden>
-            {cat.emoji}
-          </div>
+          {CatIcon && (
+            <div className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-white/20 backdrop-blur-sm mb-4 text-white" aria-hidden>
+              <CatIcon size={28} strokeWidth={1.5} />
+            </div>
+          )}
           <h1 className="font-display text-3xl sm:text-4xl md:text-5xl text-white drop-shadow">
             {cat.label}
           </h1>

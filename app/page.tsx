@@ -155,12 +155,17 @@ export default function HomePage() {
       <section className="py-10">
         <div className="mx-auto max-w-6xl px-4">
           <div className="flex items-end justify-between mb-6">
-            <h2 className="font-display text-2xl sm:text-3xl md:text-4xl text-forest">
-              Derniers articles
-            </h2>
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.15em] text-terracotta mb-1.5">
+                À la une
+              </p>
+              <h2 className="font-display text-2xl sm:text-3xl md:text-4xl text-forest">
+                Derniers articles
+              </h2>
+            </div>
             <Link
               href="/categorie/s-installer"
-              className="text-sm font-semibold text-terracotta-dark hover:underline"
+              className="hidden sm:inline-flex items-center gap-1 text-sm font-semibold text-terracotta-dark hover:underline"
             >
               Voir tout →
             </Link>

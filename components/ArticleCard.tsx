@@ -2,6 +2,7 @@ import Link from "next/link";
 import SmartImage from "@/components/SmartImage";
 import type { Article } from "@/lib/articles";
 import { CATEGORIES } from "@/lib/articles";
+import { CATEGORY_ICONS } from "@/lib/category-icons";
 
 const CATEGORY_KEYWORDS: Record<string, string> = {
   "s-installer": "malaga,architecture,house",
@@ -61,12 +62,14 @@ export default function ArticleCard({
 }) {
   const { title, description, category, slug, date } = article.frontmatter;
   const cat = CATEGORIES[category];
+  const cfg = CATEGORY_ICONS[category];
+  const CatIcon = cfg?.icon;
   const keywords = getKeywords(category, slug);
 
   return (
     <Link
       href={`/${category}/${slug}`}
-      className="group block overflow-hidden rounded-xl border border-ink/10 bg-white transition-all hover:-translate-y-0.5 hover:shadow-lg"
+      className="group block overflow-hidden rounded-xl border border-ink/10 bg-white shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:border-terracotta/20"
     >
       <div className="relative aspect-[16/9] overflow-hidden">
         <SmartImage
@@ -80,8 +83,8 @@ export default function ArticleCard({
           className="transition-transform duration-500 group-hover:scale-105"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-forest/50 via-forest/10 to-transparent" />
-        <span className="absolute bottom-3 left-3 inline-flex items-center gap-1 rounded-full bg-white/90 px-2.5 py-1 text-xs font-semibold text-forest shadow-sm backdrop-blur">
-          <span>{cat.emoji}</span>
+        <span className="absolute bottom-3 left-3 inline-flex items-center gap-1.5 rounded-full bg-white/90 px-2.5 py-1 text-xs font-semibold text-forest shadow-sm backdrop-blur">
+          {CatIcon && <CatIcon size={11} strokeWidth={2.5} className="shrink-0" />}
           {cat.label}
         </span>
       </div>
