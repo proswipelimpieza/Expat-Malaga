@@ -27,15 +27,15 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Expat Málaga — Guide des expatriés français en Andalousie",
+    default: "Expat Málaga — Guide des expatriés francophones en Andalousie",
     template: "%s · Expat Málaga",
   },
   description:
-    "Récits, démarches et bonnes adresses pour les Français qui s'installent en Andalousie : NIE, logement, santé, padel, visa nomade digital.",
+    "Récits, démarches et bonnes adresses pour les francophones qui s'installent en Andalousie : NIE, logement, santé, padel, visa nomade digital.",
   openGraph: {
-    title: "Expat Málaga — Guide des expatriés français en Andalousie",
+    title: "Expat Málaga — Guide des expatriés francophones en Andalousie",
     description:
-      "Le guide indépendant des Français qui s'installent en Andalousie.",
+      "Le guide indépendant des francophones qui s'installent en Andalousie.",
     url: SITE_URL,
     siteName: "Expat Málaga",
     locale: "fr_FR",
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Expat Málaga",
     description:
-      "Le guide indépendant des Français qui s'installent en Andalousie.",
+      "Le guide indépendant des francophones qui s'installent en Andalousie.",
     images: [`${SITE_URL}/api/og?title=Expat+M%C3%A1laga`],
   },
   robots: { index: true, follow: true },

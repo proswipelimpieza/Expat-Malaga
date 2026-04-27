@@ -10,7 +10,7 @@ export default function Footer() {
             Expat <span className="text-terracotta">Málaga</span>
           </div>
           <p className="mt-3 text-sm text-cream/70 max-w-sm leading-relaxed">
-            Le guide indépendant des expatriés français en Andalousie. Récits
+            Le guide indépendant des expatriés francophones en Andalousie. Récits
             de terrain, démarches expliquées simplement, bonnes adresses.
           </p>
         </div>

@@ -49,7 +49,7 @@ export default function Navbar() {
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className={`relative px-2.5 py-2 rounded-md font-medium transition-colors ${
+                  className={`relative whitespace-nowrap px-2.5 py-2 rounded-md font-medium transition-colors ${
                     active
                       ? "text-forest bg-forest/10"
                       : "text-ink/70 hover:text-forest hover:bg-forest/5"
@@ -63,18 +63,6 @@ export default function Navbar() {
               </li>
             );
           })}
-          <li>
-            <Link
-              href="/a-propos"
-              className={`px-2.5 py-2 rounded-md font-medium transition-colors ${
-                pathname === "/a-propos"
-                  ? "text-forest bg-forest/10"
-                  : "text-ink/70 hover:text-forest hover:bg-forest/5"
-              }`}
-            >
-              À propos
-            </Link>
-          </li>
         </ul>
 
         {/* Desktop CTA buttons */}
