@@ -7,23 +7,23 @@ export const mdxComponents = {
   h2: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h2
       {...props}
-      className="font-display text-2xl sm:text-3xl mt-12 mb-4 text-forest scroll-mt-24 pb-3 border-b border-forest/10"
+      className="font-display text-2xl sm:text-3xl mt-12 mb-6 text-forest scroll-mt-24 pb-3 border-b border-forest/10"
     />
   ),
   h3: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h3
       {...props}
-      className="font-display text-xl sm:text-2xl mt-8 mb-3 text-forest scroll-mt-24"
+      className="font-display text-xl sm:text-2xl mt-10 mb-5 text-forest scroll-mt-24"
     />
   ),
   h4: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h4
       {...props}
-      className="font-display text-lg mt-6 mb-2 text-forest scroll-mt-24"
+      className="font-display text-lg mt-8 mb-3 text-forest scroll-mt-24"
     />
   ),
   p: (props: React.HTMLAttributes<HTMLParagraphElement>) => (
-    <p {...props} className="my-5 leading-[1.8] text-ink/90" />
+    <p {...props} className="my-5 leading-[1.85] text-ink/90" />
   ),
   ul: (props: React.HTMLAttributes<HTMLUListElement>) => (
     <ul {...props} className="my-5 pl-6 list-disc space-y-2" />

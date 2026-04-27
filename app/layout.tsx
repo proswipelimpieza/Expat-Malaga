@@ -50,7 +50,10 @@ export const metadata: Metadata = {
     images: [`${SITE_URL}/api/og?title=Expat+M%C3%A1laga`],
   },
   robots: { index: true, follow: true },
-  alternates: { canonical: SITE_URL },
+  alternates: {
+    canonical: SITE_URL,
+    types: { "application/rss+xml": `${SITE_URL}/rss.xml` },
+  },
   verification: { google: "YIQu-DYF05o3DILUn_f17ozwqk2_F" },
 };
 

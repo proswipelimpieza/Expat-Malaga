@@ -11,7 +11,14 @@ const navLinks = [
   { href: "/categorie/sport", label: "Sport" },
   { href: "/categorie/travail-visa", label: "Travail & Visa" },
   { href: "/categorie/actualites", label: "Actualités" },
+  { href: "/professionnels", label: "Professionnels" },
 ];
+
+const WA_ICON = (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" className="h-4 w-4 fill-white shrink-0" aria-hidden>
+    <path d="M16 2C8.28 2 2 8.28 2 16c0 2.46.67 4.77 1.83 6.76L2 30l7.45-1.8A13.92 13.92 0 0 0 16 30c7.72 0 14-6.28 14-14S23.72 2 16 2Zm0 25.4c-2.14 0-4.15-.58-5.88-1.6l-.42-.25-4.42 1.07 1.1-4.3-.28-.44A11.4 11.4 0 0 1 4.6 16C4.6 9.7 9.7 4.6 16 4.6c6.3 0 11.4 5.1 11.4 11.4 0 6.3-5.1 11.4-11.4 11.4Zm6.26-8.56c-.34-.17-2.02-.99-2.33-1.1-.31-.12-.54-.17-.77.17-.23.34-.88 1.1-1.07 1.33-.2.23-.4.26-.74.09-.34-.17-1.43-.53-2.72-1.67-1.01-.9-1.69-2.01-1.88-2.35-.2-.34-.02-.52.15-.69.15-.15.34-.4.51-.6.17-.2.23-.34.34-.57.11-.23.06-.43-.03-.6-.09-.17-.77-1.86-1.06-2.54-.28-.67-.56-.58-.77-.59h-.65c-.23 0-.6.09-.91.43-.31.34-1.18 1.15-1.18 2.81 0 1.65 1.21 3.25 1.38 3.48.17.23 2.39 3.65 5.79 5.12.81.35 1.44.56 1.93.72.81.26 1.55.22 2.13.13.65-.1 2.02-.83 2.3-1.63.29-.8.29-1.49.2-1.63-.08-.15-.31-.23-.65-.4Z" />
+  </svg>
+);
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -35,14 +42,14 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop nav links */}
-        <ul className="hidden md:flex items-center gap-0.5 text-sm">
+        <ul className="hidden lg:flex items-center gap-0.5 text-sm">
           {navLinks.map((link) => {
             const active = isActive(link.href);
             return (
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className={`relative px-3 py-2 rounded-md font-medium transition-colors ${
+                  className={`relative px-2.5 py-2 rounded-md font-medium transition-colors ${
                     active
                       ? "text-forest bg-forest/10"
                       : "text-ink/70 hover:text-forest hover:bg-forest/5"
@@ -59,7 +66,7 @@ export default function Navbar() {
           <li>
             <Link
               href="/a-propos"
-              className={`px-3 py-2 rounded-md font-medium transition-colors ${
+              className={`px-2.5 py-2 rounded-md font-medium transition-colors ${
                 pathname === "/a-propos"
                   ? "text-forest bg-forest/10"
                   : "text-ink/70 hover:text-forest hover:bg-forest/5"
@@ -70,13 +77,22 @@ export default function Navbar() {
           </li>
         </ul>
 
-        {/* Desktop contact button */}
-        <Link
-          href="/contact"
-          className="hidden sm:inline-flex items-center rounded-md bg-terracotta px-3.5 py-2 text-sm font-semibold text-white hover:bg-terracotta-dark transition-colors shadow-sm"
-        >
-          Contact
-        </Link>
+        {/* Desktop CTA buttons */}
+        <div className="hidden sm:flex items-center gap-2">
+          <Link
+            href="/communaute"
+            className="inline-flex items-center gap-1.5 rounded-md bg-[#25D366] px-3 py-2 text-sm font-semibold text-white hover:bg-[#1ebe5d] transition-colors"
+          >
+            {WA_ICON}
+            <span className="hidden md:inline">Communauté</span>
+          </Link>
+          <Link
+            href="/contact"
+            className="inline-flex items-center rounded-md bg-terracotta px-3.5 py-2 text-sm font-semibold text-white hover:bg-terracotta-dark transition-colors shadow-sm"
+          >
+            Contact
+          </Link>
+        </div>
 
         {/* Mobile hamburger */}
         <button
@@ -84,7 +100,7 @@ export default function Navbar() {
           aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
-          className="md:hidden flex flex-col justify-center items-center h-9 w-9 rounded-md text-forest hover:bg-forest/5 transition-colors gap-1.5"
+          className="lg:hidden flex flex-col justify-center items-center h-9 w-9 rounded-md text-forest hover:bg-forest/5 transition-colors gap-1.5"
         >
           <span className={`block h-0.5 w-5 bg-current transition-transform duration-200 ${open ? "translate-y-2 rotate-45" : ""}`} />
           <span className={`block h-0.5 w-5 bg-current transition-opacity duration-200 ${open ? "opacity-0" : ""}`} />
@@ -94,7 +110,7 @@ export default function Navbar() {
 
       {/* Mobile dropdown */}
       {open && (
-        <div className="md:hidden border-t border-forest/10 bg-cream/95 backdrop-blur-md px-4 py-3 max-h-[calc(100vh-56px)] overflow-y-auto">
+        <div className="lg:hidden border-t border-forest/10 bg-cream/95 backdrop-blur-md px-4 py-3 max-h-[calc(100vh-56px)] overflow-y-auto">
           <ul className="flex flex-col gap-1 text-sm">
             {navLinks.map((link) => {
               const active = isActive(link.href);
@@ -128,7 +144,15 @@ export default function Navbar() {
                 À propos
               </Link>
             </li>
-            <li className="mt-2 pt-2 border-t border-forest/10">
+            <li className="mt-2 pt-2 border-t border-forest/10 flex flex-col gap-2">
+              <Link
+                href="/communaute"
+                onClick={() => setOpen(false)}
+                className="flex items-center justify-center gap-2 w-full rounded-md bg-[#25D366] px-3.5 py-2.5 text-sm font-semibold text-white hover:bg-[#1ebe5d] transition-colors"
+              >
+                {WA_ICON}
+                Communauté WhatsApp
+              </Link>
               <Link
                 href="/contact"
                 onClick={() => setOpen(false)}

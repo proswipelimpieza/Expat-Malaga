@@ -39,6 +39,17 @@ export default function Footer() {
           </div>
           <ul className="space-y-2 text-sm">
             <li>
+              <Link href="/communaute" className="hover:text-terracotta flex items-center gap-1.5">
+                <span className="h-2 w-2 rounded-full bg-[#25D366]" />
+                Communauté
+              </Link>
+            </li>
+            <li>
+              <Link href="/professionnels" className="hover:text-terracotta">
+                Professionnels
+              </Link>
+            </li>
+            <li>
               <Link href="/a-propos" className="hover:text-terracotta">
                 À propos
               </Link>
@@ -51,6 +62,11 @@ export default function Footer() {
             <li>
               <a href="/sitemap.xml" className="hover:text-terracotta">
                 Plan du site
+              </a>
+            </li>
+            <li>
+              <a href="/rss.xml" className="hover:text-terracotta">
+                Flux RSS
               </a>
             </li>
           </ul>
