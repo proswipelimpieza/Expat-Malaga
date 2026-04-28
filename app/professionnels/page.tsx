@@ -46,8 +46,16 @@ export default function ProfessionnelsPage() {
   return (
     <>
       {/* Hero */}
-      <section className="border-b border-forest/10 bg-forest text-cream">
-        <div className="mx-auto max-w-6xl px-4 py-16 md:py-20">
+      <section
+        className="relative border-b border-forest/10 text-cream overflow-hidden"
+        style={{
+          backgroundImage: "url('/images/categories/Professionnels.jpg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        <div className="absolute inset-0 bg-forest/85" aria-hidden />
+        <div className="relative mx-auto max-w-6xl px-4 py-16 md:py-20">
           <span className="inline-block rounded-full bg-terracotta/20 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-terracotta mb-5">
             Réseau professionnel
           </span>

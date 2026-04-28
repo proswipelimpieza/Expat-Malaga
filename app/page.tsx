@@ -56,8 +56,17 @@ export default function HomePage() {
         className="relative w-full overflow-hidden"
         style={{ borderBottom: "1px solid rgba(0,150,199,0.12)" }}
       >
-        {/* Sky gradient */}
-        <div className="absolute inset-0 gradient-hero" aria-hidden />
+        {/* Beach photo */}
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage: "url('/images/hero/plage.jpg')",
+            filter: "brightness(1.08) saturate(0.85)",
+          }}
+          aria-hidden
+        />
+        {/* Sky gradient overlay — keeps the light v2 aesthetic */}
+        <div className="absolute inset-0 gradient-hero" style={{ opacity: 0.82 }} aria-hidden />
         {/* Bottom wave strip */}
         <div
           className="absolute bottom-0 left-0 right-0 h-1.5"
