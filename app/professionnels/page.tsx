@@ -54,7 +54,13 @@ export default function ProfessionnelsPage() {
           backgroundPosition: "center",
         }}
       >
-        <div className="absolute inset-0 bg-forest/85" aria-hidden />
+        <div
+          className="absolute inset-0"
+          style={{
+            background: "linear-gradient(135deg, rgba(1,58,82,0.80) 0%, rgba(0,100,170,0.65) 100%)",
+          }}
+          aria-hidden
+        />
         <div className="relative mx-auto max-w-6xl px-4 py-16 md:py-20">
           <span className="inline-block rounded-full bg-terracotta/20 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-terracotta mb-5">
             Réseau professionnel

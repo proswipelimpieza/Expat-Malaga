@@ -61,12 +61,12 @@ export default function HomePage() {
           className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage: "url('/images/hero/plage.jpg')",
-            filter: "brightness(1.08) saturate(0.85)",
+            filter: "brightness(1.05) saturate(0.95)",
           }}
           aria-hidden
         />
-        {/* Sky gradient overlay — keeps the light v2 aesthetic */}
-        <div className="absolute inset-0 gradient-hero" style={{ opacity: 0.82 }} aria-hidden />
+        {/* Sky gradient overlay — semi-transparent so the photo shows through */}
+        <div className="absolute inset-0 gradient-hero" style={{ opacity: 0.55 }} aria-hidden />
         {/* Bottom wave strip */}
         <div
           className="absolute bottom-0 left-0 right-0 h-1.5"
