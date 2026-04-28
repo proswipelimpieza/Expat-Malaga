@@ -3,9 +3,14 @@
 @tailwind utilities;
 
 :root {
-  --color-cream: #f5f0e8;
-  --color-forest: #1a3a2a;
-  --color-terracotta: #e8916a;
+  --sea:      #0096c7;
+  --sea-dark: #007aad;
+  --coral:    #e8703a;
+  --forest:   #2c4a1e;
+  --navy:     #013a52;
+  --sand:     #fdfaf5;
+  --sky:      #e8f5fc;
+  --ink:      #1c1a17;
 }
 
 html {
@@ -13,45 +18,59 @@ html {
   overflow-x: hidden;
 }
 
-/*
- * Global textured background: cream base + a subtle "paper grain" SVG
- * (high-frequency fractal noise at low opacity) + a discreet andalusian
- * tile dot-pattern, both inlined as data-URIs so no extra HTTP request.
- */
 body {
   overflow-x: hidden;
-  background-color: var(--color-cream);
-  background-image:
-    /* Andalusian ceramic dot-grid — very soft forest-green */
-    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'><g fill='%231A3A2A' fill-opacity='0.05'><circle cx='6' cy='6' r='1.2'/><circle cx='30' cy='6' r='1.2'/><circle cx='18' cy='18' r='1.2'/><circle cx='42' cy='18' r='1.2'/><circle cx='6' cy='30' r='1.2'/><circle cx='30' cy='30' r='1.2'/><circle cx='18' cy='42' r='1.2'/><circle cx='42' cy='42' r='1.2'/></g></svg>"),
-    /* Warm paper grain via SVG fractal noise */
-    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.10   0 0 0 0 0.23   0 0 0 0 0.16   0 0 0 0.06 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
-  background-repeat: repeat, repeat;
-  background-size: 48px 48px, 240px 240px;
-  background-attachment: fixed, fixed;
-  color: #1c1b18;
+  background-color: #fdfaf5; /* sand */
+  color: #1c1a17;
   font-family: var(--font-inter), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
 ::selection {
-  background-color: var(--color-terracotta);
+  background-color: var(--sea);
   color: #fff;
 }
 
-/* Accessible focus ring — keyboard navigation */
+/* Accessible focus ring */
 :focus-visible {
-  outline: 2px solid var(--color-terracotta);
+  outline: 2px solid var(--sea);
   outline-offset: 3px;
   border-radius: 4px;
 }
 
+/* ── KEYFRAMES ─────────────────────────── */
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+@keyframes lineGrow {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.25; }
+}
+
+/* ── EDITORIAL PROSE ──────────────────── */
+.prose-editorial {
+  font-size: 1.0625rem;
+  line-height: 1.8;
+}
 .prose-editorial h1,
 .prose-editorial h2,
 .prose-editorial h3,
 .prose-editorial h4 {
   font-family: var(--font-playfair), Georgia, serif;
-  color: var(--color-forest);
+  color: var(--forest);
 }
 
 /* Smooth image rendering */
@@ -59,25 +78,14 @@ img {
   image-rendering: -webkit-optimize-contrast;
 }
 
-/* Article reading width — generous but comfortable */
-.prose-editorial {
-  font-size: 1.0625rem; /* 17px */
-  line-height: 1.8;
-}
-
+/* ── HERO GRADIENTS ───────────────────── */
 .gradient-hero {
   background:
-    radial-gradient(1200px 500px at 80% -10%, rgba(232, 145, 106, 0.35), transparent 60%),
-    radial-gradient(900px 400px at 0% 20%, rgba(26, 58, 42, 0.15), transparent 60%),
-    linear-gradient(180deg, #f7f2ea 0%, #f5f0e8 100%);
+    radial-gradient(ellipse 55% 70% at 88% 0%, rgba(244,166,35,0.28) 0%, transparent 60%),
+    radial-gradient(ellipse 80% 40% at 30% 110%, rgba(0,150,199,0.12) 0%, transparent 65%),
+    linear-gradient(175deg, #d4effc 0%, #e8f6fd 22%, #fff7ee 55%, #fdf0e0 80%, #f9e8cc 100%);
 }
 
-.gradient-tile-1 {
-  background: linear-gradient(135deg, #1a3a2a 0%, #2a5540 55%, #e8916a 100%);
-}
-.gradient-tile-2 {
-  background: linear-gradient(135deg, #e8916a 0%, #c8703f 60%, #1a3a2a 100%);
-}
-.gradient-tile-3 {
-  background: linear-gradient(135deg, #2a5540 0%, #e8916a 60%, #f5f0e8 100%);
+.gradient-band {
+  background: linear-gradient(160deg, #e8f6fd 0%, #d4effc 35%, #ceeaf8 65%, #e0f5fb 100%);
 }

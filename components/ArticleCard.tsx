@@ -69,7 +69,7 @@ export default function ArticleCard({
   return (
     <Link
       href={`/${category}/${slug}`}
-      className="group block overflow-hidden rounded-xl border border-ink/10 bg-white shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:border-terracotta/20"
+      className="group block overflow-hidden rounded-xl border border-ink/10 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-sea/25"
     >
       <div className="relative aspect-[16/9] overflow-hidden">
         <SmartImage
@@ -92,7 +92,7 @@ export default function ArticleCard({
         <h3
           className={`font-display text-forest leading-tight ${
             featured ? "text-xl sm:text-2xl" : "text-lg sm:text-xl"
-          } group-hover:text-terracotta-dark transition-colors`}
+          } group-hover:text-sea transition-colors`}
         >
           {title}
         </h3>

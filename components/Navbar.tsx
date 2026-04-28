@@ -29,35 +29,47 @@ export default function Navbar() {
   }
 
   return (
-    <header className="sticky top-0 z-40 backdrop-blur-md bg-cream/88 border-b border-forest/10 shadow-sm">
-      <nav className="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between gap-4">
+    <header
+      className="sticky top-0 z-40 border-b"
+      style={{
+        background: "rgba(253,250,245,0.92)",
+        backdropFilter: "saturate(160%) blur(20px)",
+        WebkitBackdropFilter: "saturate(160%) blur(20px)",
+        borderColor: "rgba(28,26,23,0.08)",
+        boxShadow: "0 1px 0 rgba(28,26,23,0.05)",
+      }}
+    >
+      <nav className="mx-auto max-w-6xl px-4 h-14 flex items-center gap-4">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 shrink-0" onClick={() => setOpen(false)}>
-          <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-forest to-forest-light text-cream font-display text-lg shadow-sm">
+          <span
+            className="inline-flex h-9 w-9 items-center justify-center rounded-full font-display text-base text-white shadow-sm"
+            style={{ background: "#2c4a1e" }}
+          >
             E
           </span>
-          <span className="font-display text-xl text-forest leading-none">
-            Expat <span className="text-terracotta-dark">Málaga</span>
+          <span className="font-display text-xl leading-none" style={{ color: "#2c4a1e" }}>
+            Expat <span style={{ color: "#0096c7" }}>Málaga</span>
           </span>
         </Link>
 
         {/* Desktop nav links */}
-        <ul className="hidden lg:flex items-center gap-0.5 text-sm">
+        <ul className="hidden lg:flex items-center gap-0.5 flex-1 text-sm">
           {navLinks.map((link) => {
             const active = isActive(link.href);
             return (
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className={`relative whitespace-nowrap px-2.5 py-2 rounded-md font-medium transition-colors ${
+                  className={`relative whitespace-nowrap px-2.5 py-2 rounded-lg text-sm font-normal transition-colors ${
                     active
-                      ? "text-forest bg-forest/10"
-                      : "text-ink/70 hover:text-forest hover:bg-forest/5"
+                      ? "text-forest bg-sea/10"
+                      : "text-ink-soft hover:text-ink hover:bg-sea/8"
                   }`}
                 >
                   {link.label}
                   {active && (
-                    <span className="absolute bottom-1 left-1/2 -translate-x-1/2 h-0.5 w-4 rounded-full bg-terracotta" />
+                    <span className="absolute bottom-1 left-1/2 -translate-x-1/2 h-0.5 w-4 rounded-full bg-sea" />
                   )}
                 </Link>
               </li>
@@ -65,18 +77,21 @@ export default function Navbar() {
           })}
         </ul>
 
-        {/* Desktop CTA buttons */}
-        <div className="hidden sm:flex items-center gap-2">
+        {/* Desktop CTA */}
+        <div className="hidden sm:flex items-center gap-2 ml-auto">
           <Link
             href="/communaute"
-            className="inline-flex items-center gap-1.5 rounded-md bg-[#25D366] px-3 py-2 text-sm font-semibold text-white hover:bg-[#1ebe5d] transition-colors"
+            className="inline-flex items-center gap-1.5 rounded-full bg-[#25D366] px-3 py-2 text-sm font-medium text-white hover:bg-[#1ebe5d] transition-colors"
           >
             {WA_ICON}
             <span className="hidden md:inline">Communauté</span>
           </Link>
           <Link
             href="/contact"
-            className="inline-flex items-center rounded-md bg-terracotta px-3.5 py-2 text-sm font-semibold text-white hover:bg-terracotta-dark transition-colors shadow-sm"
+            className="inline-flex items-center rounded-full px-4 py-2 text-sm font-medium text-white transition-colors"
+            style={{ background: "#0096c7" }}
+            onMouseEnter={(e) => (e.currentTarget.style.background = "#007aad")}
+            onMouseLeave={(e) => (e.currentTarget.style.background = "#0096c7")}
           >
             Contact
           </Link>
@@ -88,7 +103,8 @@ export default function Navbar() {
           aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
-          className="lg:hidden flex flex-col justify-center items-center h-9 w-9 rounded-md text-forest hover:bg-forest/5 transition-colors gap-1.5"
+          className="lg:hidden ml-auto flex flex-col justify-center items-center h-9 w-9 rounded-lg gap-1.5"
+          style={{ color: "#2c4a1e" }}
         >
           <span className={`block h-0.5 w-5 bg-current transition-transform duration-200 ${open ? "translate-y-2 rotate-45" : ""}`} />
           <span className={`block h-0.5 w-5 bg-current transition-opacity duration-200 ${open ? "opacity-0" : ""}`} />
@@ -98,8 +114,15 @@ export default function Navbar() {
 
       {/* Mobile dropdown */}
       {open && (
-        <div className="lg:hidden border-t border-forest/10 bg-cream/95 backdrop-blur-md px-4 py-3 max-h-[calc(100vh-56px)] overflow-y-auto">
-          <ul className="flex flex-col gap-1 text-sm">
+        <div
+          className="lg:hidden border-t px-4 py-3 max-h-[calc(100vh-56px)] overflow-y-auto"
+          style={{
+            background: "rgba(253,250,245,0.97)",
+            backdropFilter: "blur(20px)",
+            borderColor: "rgba(28,26,23,0.08)",
+          }}
+        >
+          <ul className="flex flex-col text-sm">
             {navLinks.map((link) => {
               const active = isActive(link.href);
               return (
@@ -107,13 +130,13 @@ export default function Navbar() {
                   <Link
                     href={link.href}
                     onClick={() => setOpen(false)}
-                    className={`flex items-center gap-2 px-3 py-2.5 rounded-md font-medium transition-colors ${
-                      active
-                        ? "text-forest bg-forest/10"
-                        : "text-ink/80 hover:text-forest hover:bg-forest/5"
-                    }`}
+                    className="flex items-center gap-2 px-3 py-3 border-b font-normal transition-colors"
+                    style={{
+                      borderColor: "rgba(28,26,23,0.07)",
+                      color: active ? "#2c4a1e" : "#6b6358",
+                    }}
                   >
-                    {active && <span className="h-1.5 w-1.5 rounded-full bg-terracotta shrink-0" />}
+                    {active && <span className="h-1.5 w-1.5 rounded-full bg-sea shrink-0" />}
                     {link.label}
                   </Link>
                 </li>
@@ -123,20 +146,17 @@ export default function Navbar() {
               <Link
                 href="/a-propos"
                 onClick={() => setOpen(false)}
-                className={`block px-3 py-2.5 rounded-md font-medium transition-colors ${
-                  pathname === "/a-propos"
-                    ? "text-forest bg-forest/10"
-                    : "text-ink/80 hover:text-forest hover:bg-forest/5"
-                }`}
+                className="flex items-center px-3 py-3 border-b font-normal"
+                style={{ borderColor: "rgba(28,26,23,0.07)", color: "#6b6358" }}
               >
                 À propos
               </Link>
             </li>
-            <li className="mt-2 pt-2 border-t border-forest/10 flex flex-col gap-2">
+            <li className="mt-3 flex flex-col gap-2">
               <Link
                 href="/communaute"
                 onClick={() => setOpen(false)}
-                className="flex items-center justify-center gap-2 w-full rounded-md bg-[#25D366] px-3.5 py-2.5 text-sm font-semibold text-white hover:bg-[#1ebe5d] transition-colors"
+                className="flex items-center justify-center gap-2 w-full rounded-full bg-[#25D366] px-4 py-2.5 text-sm font-medium text-white"
               >
                 {WA_ICON}
                 Communauté WhatsApp
@@ -144,7 +164,8 @@ export default function Navbar() {
               <Link
                 href="/contact"
                 onClick={() => setOpen(false)}
-                className="block w-full text-center rounded-md bg-terracotta px-3.5 py-2.5 text-sm font-semibold text-white hover:bg-terracotta-dark transition-colors"
+                className="block w-full text-center rounded-full px-4 py-2.5 text-sm font-medium text-white"
+                style={{ background: "#0096c7" }}
               >
                 Contact
               </Link>

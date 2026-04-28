@@ -31,118 +31,161 @@ const STARTER_STEPS = [
   },
 ];
 
+const LIFESTYLE_PILLS = [
+  "☀️ 300 jours de soleil",
+  "🌊 Plages à 15 min",
+  "⛰️ Sierra Nevada proche",
+  "🏃 Padel toute l'année",
+];
+
+const BAND_STATS = [
+  { n: "40+", label: "Guides détaillés", sub: "Mis à jour régulièrement", color: "#0096c7" },
+  { n: "5",   label: "Grandes rubriques", sub: "Installation, villes, sport…", color: "#e8703a" },
+  { n: "300", label: "jours de soleil / an", sub: "La Costa del Sol en chiffres", color: "#f4a623" },
+];
+
 export default function HomePage() {
-  // Exclude actualites from the main grid — the section has its own page.
-  const featured = getFeaturedArticles(12).filter(
-    (a) => a.frontmatter.category !== "actualites",
-  ).slice(0, 6);
+  const featured = getFeaturedArticles(12)
+    .filter((a) => a.frontmatter.category !== "actualites")
+    .slice(0, 6);
 
   return (
     <>
-      <section className="relative w-full border-b border-forest/10 overflow-hidden">
-        {/* Fond : photo de plage de Málaga, légèrement assombrie */}
+      {/* ── HERO ─────────────────────────────── */}
+      <section
+        className="relative w-full overflow-hidden"
+        style={{ borderBottom: "1px solid rgba(0,150,199,0.12)" }}
+      >
+        {/* Sky gradient */}
+        <div className="absolute inset-0 gradient-hero" aria-hidden />
+        {/* Bottom wave strip */}
         <div
-          className="absolute inset-0 bg-cover bg-center"
+          className="absolute bottom-0 left-0 right-0 h-1.5"
           style={{
-            backgroundImage: "url('/images/hero/malaga-beach.jpg')",
-            filter: "brightness(0.65) saturate(1.1)",
-          }}
-          aria-hidden
-        />
-        {/* Voile principal — sombre à gauche (pour le texte), léger à droite */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(90deg, rgba(20,40,30,0.92) 0%, rgba(20,40,30,0.80) 35%, rgba(20,40,30,0.55) 60%, rgba(20,40,30,0.30) 100%)",
-          }}
-          aria-hidden
-        />
-        {/* Voile secondaire vertical pour adoucir bord haut/bas */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(180deg, rgba(0,0,0,0.25) 0%, transparent 30%, transparent 70%, rgba(0,0,0,0.15) 100%)",
+            background: "linear-gradient(90deg, #0096c7 0%, #ceeaf8 50%, #0096c7 100%)",
+            opacity: 0.35,
           }}
           aria-hidden
         />
 
-        <div className="relative w-full mx-auto max-w-6xl px-4 py-10 sm:py-16 md:py-28 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-center">
-          <div className="min-w-0">
-            <span className="inline-flex items-center gap-2 rounded-full bg-white/95 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-forest shadow">
-              <span className="h-2 w-2 rounded-full bg-terracotta animate-pulse" />
+        <div className="relative mx-auto max-w-6xl px-4 sm:px-6 py-20 md:py-28 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
+
+          {/* ── Left column ── */}
+          <div>
+            {/* Badge */}
+            <span
+              className="inline-flex items-center gap-2 rounded-full bg-white/85 backdrop-blur-sm border px-3.5 py-1.5 text-xs font-medium text-sea mb-6"
+              style={{
+                borderColor: "rgba(0,150,199,0.20)",
+                boxShadow: "0 2px 8px rgba(0,150,199,0.10)",
+              }}
+            >
+              <span
+                className="h-1.5 w-1.5 rounded-full bg-coral"
+                style={{ animation: "pulse 2s infinite" }}
+              />
               Guide indépendant · 2025
             </span>
+
+            {/* Headline */}
             <h1
-              className="mt-5 font-display text-2xl sm:text-3xl md:text-5xl lg:text-6xl leading-tight text-white break-words"
-              style={{ textShadow: "0 2px 16px rgba(0,0,0,0.45)" }}
+              className="font-display text-4xl sm:text-5xl lg:text-[3.75rem] font-bold leading-[1.1] text-forest mb-5"
+              style={{ letterSpacing: "-0.025em" }}
             >
               S'installer en{" "}
-              <span className="text-terracotta">Andalousie</span>,{" "}
-              <br className="hidden md:block" />
+              <span
+                className="animate-shimmer"
+                style={{
+                  color: "transparent",
+                  backgroundImage: "linear-gradient(90deg, #0096c7, #00b8e0, #0096c7)",
+                  backgroundSize: "200% auto",
+                  backgroundClip: "text",
+                  WebkitBackgroundClip: "text",
+                }}
+              >
+                Andalousie
+              </span>
+              ,<br className="hidden sm:block" />
               sans se tromper.
             </h1>
-            <p
-              className="mt-5 text-base sm:text-lg text-white max-w-xl leading-relaxed"
-              style={{ textShadow: "0 1px 8px rgba(0,0,0,0.6)" }}
-            >
+
+            <p className="text-lg text-ink-soft leading-relaxed mb-8 max-w-lg">
               NIE, logement à Málaga, compte bancaire, santé, padel,
               télétravail : des expats partagent leur expérience de terrain
               pour vous aider à franchir le pas.
             </p>
-            <div className="mt-7 flex flex-col sm:flex-row flex-wrap gap-3">
+
+            {/* CTAs */}
+            <div className="flex flex-wrap gap-3 mb-8">
               <Link
                 href="/categorie/s-installer"
-                className="inline-flex items-center gap-2 justify-center rounded-lg bg-terracotta px-5 py-3 text-sm font-semibold text-white hover:bg-terracotta-dark shadow-lg transition-colors"
+                className="inline-flex items-center gap-2 rounded-full bg-sea hover:bg-sea-dark px-6 py-3 text-sm font-medium text-white transition-all hover:-translate-y-px shadow-md"
               >
-                Commencer par les démarches <ArrowRight size={16} />
+                Commencer les démarches <ArrowRight size={13} />
               </Link>
               <Link
                 href="/categorie/villes"
-                className="inline-flex items-center justify-center rounded-lg border border-white/70 bg-white/15 backdrop-blur-sm px-5 py-3 text-sm font-semibold text-white hover:bg-white/25 shadow-lg"
+                className="inline-flex items-center rounded-full border border-sea text-sea px-6 py-3 text-sm font-medium transition-colors hover:bg-sky/50"
               >
                 Découvrir les villes
               </Link>
             </div>
+
+            {/* Lifestyle pills */}
+            <div className="flex flex-wrap gap-2">
+              {LIFESTYLE_PILLS.map((t) => (
+                <span
+                  key={t}
+                  className="inline-flex items-center rounded-full bg-white/75 backdrop-blur-sm border border-sea/15 px-3 py-1 text-xs text-ink-soft"
+                >
+                  {t}
+                </span>
+              ))}
+            </div>
           </div>
 
-          {/* Kit de démarrage — evergreen */}
-          <div className="relative min-w-0 w-full">
-            <div className="relative rounded-2xl bg-white shadow-2xl border border-white/20 overflow-hidden">
-              <div className="bg-forest text-cream px-4 sm:px-6 py-4 sm:py-5">
-                <div className="text-[11px] uppercase tracking-[0.2em] text-terracotta">
+          {/* ── Right column — Starter kit ── */}
+          <div>
+            <div
+              className="rounded-2xl overflow-hidden"
+              style={{
+                boxShadow: "0 24px 60px rgba(0,150,199,0.14), 0 4px 16px rgba(28,26,23,0.08)",
+                border: "1px solid rgba(0,150,199,0.12)",
+              }}
+            >
+              {/* Card header */}
+              <div
+                className="px-6 py-5"
+                style={{ background: "linear-gradient(135deg, #0096c7 0%, #00aadf 100%)" }}
+              >
+                <div
+                  className="text-xs font-medium uppercase text-white/80 mb-1.5"
+                  style={{ letterSpacing: ".14em" }}
+                >
                   Kit de démarrage
                 </div>
-                <h2 className="mt-1 font-display text-2xl leading-tight">
+                <h2 className="font-display text-2xl font-semibold text-white leading-snug mb-1">
                   Les 4 étapes incontournables
                 </h2>
-                <p className="mt-1 text-sm text-cream/70">
-                  Dans l'ordre où on les fait vraiment.
-                </p>
+                <p className="text-sm text-white/70">Dans l'ordre où on les fait vraiment.</p>
               </div>
-              <ol className="divide-y divide-forest/10">
+
+              {/* Steps list */}
+              <ol className="bg-white divide-y divide-black/[0.06]">
                 {STARTER_STEPS.map((step) => (
                   <li key={step.n}>
                     <Link
                       href={step.href}
-                      className="group flex items-center gap-3 sm:gap-4 px-4 sm:px-5 py-4 hover:bg-cream/60 transition"
+                      className="group flex items-center gap-4 px-6 py-4 hover:bg-sky/40 transition-colors"
                     >
-                      <span className="h-9 w-9 shrink-0 flex items-center justify-center rounded-full bg-terracotta/10 text-terracotta-dark font-display font-bold text-sm">
+                      <span className="h-9 w-9 shrink-0 flex items-center justify-center rounded-full bg-sea/10 font-display font-bold text-sm text-sea">
                         {step.n}
                       </span>
                       <div className="flex-1 min-w-0">
-                        <div className="font-semibold text-forest">
-                          {step.title}
-                        </div>
-                        <div className="text-sm text-ink/60 truncate">
-                          {step.desc}
-                        </div>
+                        <div className="font-medium text-sm text-ink">{step.title}</div>
+                        <div className="text-xs text-ink-soft truncate">{step.desc}</div>
                       </div>
-                      <ArrowRight
-                        size={16}
-                        className="text-terracotta-dark group-hover:translate-x-1 transition-transform shrink-0"
-                      />
+                      <span className="text-sea text-xl shrink-0">›</span>
                     </Link>
                   </li>
                 ))}
@@ -152,26 +195,100 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ── CATÉGORIES ──────────────────────── */}
       <CategoryNav />
 
-      <section className="py-10">
+      {/* ── FEATURE BAND ────────────────────── */}
+      <section
+        className="gradient-band py-20 border-y"
+        style={{ borderColor: "rgba(0,150,199,0.12)" }}
+      >
+        <div className="mx-auto max-w-6xl px-4 grid grid-cols-1 md:grid-cols-2 gap-14 md:gap-20 items-center">
+          {/* Left */}
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-widest text-sea mb-5">
+              La vie sous le soleil
+            </p>
+            <h2
+              className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-forest leading-[1.12] mb-5"
+              style={{ letterSpacing: "-0.025em" }}
+            >
+              Vivre en{" "}
+              <em className="not-italic text-sea">Andalousie</em>{" "}
+              comme un local.
+            </h2>
+            <p className="text-lg text-ink-soft leading-relaxed mb-8 max-w-md">
+              Récits de terrain, démarches expliquées simplement, bonnes
+              adresses : tout ce que les forums ne vous diront pas.
+            </p>
+            <div className="flex flex-wrap gap-3">
+              <Link
+                href="/categorie/s-installer"
+                className="inline-flex items-center gap-2 rounded-full bg-sea hover:bg-sea-dark px-5 py-2.5 text-sm font-medium text-white transition-colors"
+              >
+                Découvrir les guides <ArrowRight size={13} />
+              </Link>
+              <Link
+                href="/a-propos"
+                className="inline-flex items-center rounded-full border border-sea text-sea px-5 py-2.5 text-sm font-medium transition-colors hover:bg-white/60"
+              >
+                À propos du site
+              </Link>
+            </div>
+          </div>
+
+          {/* Right — stats */}
+          <div className="flex flex-col gap-4">
+            {BAND_STATS.map((s) => (
+              <div
+                key={s.n}
+                className="flex items-center gap-5 rounded-2xl border border-white/80 px-5 py-4"
+                style={{
+                  background: "rgba(255,255,255,0.55)",
+                  backdropFilter: "blur(6px)",
+                  boxShadow: "0 2px 12px rgba(0,150,199,0.08)",
+                }}
+              >
+                <span
+                  className="font-display text-4xl font-bold leading-none min-w-[5rem]"
+                  style={{ color: s.color }}
+                >
+                  {s.n}
+                </span>
+                <div>
+                  <div className="font-medium text-forest mb-0.5">{s.label}</div>
+                  <div className="text-sm text-ink-soft">{s.sub}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── ARTICLES ────────────────────────── */}
+      <section className="py-14 bg-sand">
         <div className="mx-auto max-w-6xl px-4">
-          <div className="flex items-end justify-between mb-6">
+          <div className="flex items-end justify-between mb-8 flex-wrap gap-3">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.15em] text-terracotta mb-1.5">
-                À la une
-              </p>
-              <h2 className="font-display text-2xl sm:text-3xl md:text-4xl text-forest">
+              <h2
+                className="font-display text-3xl sm:text-4xl font-semibold text-ink"
+                style={{ letterSpacing: "-0.015em" }}
+              >
                 Derniers articles
               </h2>
+              <div
+                className="mt-2 h-[3px] w-12 rounded-full origin-left animate-line-grow"
+                style={{ background: "linear-gradient(90deg, #0096c7, #e8703a)" }}
+              />
             </div>
             <Link
               href="/categorie/s-installer"
-              className="hidden sm:inline-flex items-center gap-1 text-sm font-semibold text-terracotta-dark hover:underline"
+              className="flex items-center gap-1.5 text-sm font-medium text-sea hover:underline underline-offset-2 transition-colors"
             >
-              Voir tout <ArrowRight size={14} />
+              Voir tous les articles <ArrowRight size={13} />
             </Link>
           </div>
+
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {featured.map((a) => (
               <ArticleCard key={a.frontmatter.slug} article={a} />
@@ -179,7 +296,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
     </>
   );
 }
