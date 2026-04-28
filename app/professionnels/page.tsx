@@ -3,19 +3,36 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Rejoindre le réseau de professionnels",
   description:
-    "Vous êtes professionnel à Málaga ou en Andalousie et souhaitez proposer vos services aux expatriés français ? Rejoignez notre réseau.",
+    "Vous êtes professionnel à Málaga ou en Andalousie et souhaitez proposer vos services aux expatriés francophones ? Rejoignez notre réseau.",
   alternates: { canonical: "https://expatmalaga.org/professionnels" },
 };
 
-const PROFIL_TYPES = [
-  { emoji: "⚖️", titre: "Avocats & juristes", desc: "Droit des étrangers, fiscalité franco-espagnole, succession, contrats de travail." },
-  { emoji: "🏠", titre: "Agents immobiliers", desc: "Location, achat, gestion locative — accompagnement en français." },
-  { emoji: "🧾", titre: "Comptables & gestionnaires", desc: "Déclarations fiscales, statut autónomo, Modèle 720, loi Beckham." },
-  { emoji: "🩺", titre: "Médecins & praticiens", desc: "Généralistes, dentistes, psy, kiné francophones à Málaga et sur la Costa del Sol." },
-  { emoji: "🔑", titre: "Gestionnaires & tramitadores", desc: "NIE, empadronamiento, TIE, permis de conduire — vous gérez les citas à la place des expats." },
-  { emoji: "🏫", titre: "Écoles & cours", desc: "Cours d'espagnol, écoles bilingues, formation professionnelle." },
-  { emoji: "🚚", titre: "Déménageurs & logistique", desc: "Transport international, dédouanement, stockage." },
-  { emoji: "🛠️", titre: "Artisans & travaux", desc: "Electriciens, plombiers, architectes, rénovation — sérieux et francophones." },
+const PROFIL_TYPES: {
+  titre: string;
+  desc: string;
+  partner?: { nom: string; url: string };
+}[] = [
+  {
+    titre: "Déménageurs & logistique",
+    desc: "Transport international, dédouanement, stockage.",
+    partner: { nom: "The Smooth Mover", url: "https://the-smooth-mover.com/fr/" },
+  },
+  {
+    titre: "Agents immobiliers",
+    desc: "Location, achat, gestion locative — accompagnement en français.",
+  },
+  {
+    titre: "Comptables & gestionnaires",
+    desc: "Déclarations fiscales, statut autónomo, Modèle 720, loi Beckham.",
+  },
+  {
+    titre: "Médecins & praticiens",
+    desc: "Généralistes, dentistes, psy, kiné francophones à Málaga et sur la Costa del Sol.",
+  },
+  {
+    titre: "Cours de langue",
+    desc: "Cours d'espagnol pour francophones, tous niveaux — du débutant au courant.",
+  },
 ];
 
 const AVANTAGES = [
@@ -39,9 +56,9 @@ export default function ProfessionnelsPage() {
             <span className="text-terracotta">Faites-vous connaître.</span>
           </h1>
           <p className="mt-5 text-cream/80 max-w-2xl leading-relaxed text-lg">
-            Chaque semaine, des centaines de Français cherchent sur ce site un
-            avocat, un comptable, un agent immobilier ou un médecin francophone
-            à Málaga. Rejoignez notre réseau et soyez la référence qu'ils
+            Chaque semaine, des centaines de francophones cherchent sur ce site un
+            comptable, un agent immobilier, un médecin ou un artisan francophone
+            à Málaga. Rejoignez notre réseau et soyez la référence qu&apos;ils
             trouvent.
           </p>
         </div>
@@ -54,18 +71,75 @@ export default function ProfessionnelsPage() {
             Quels profils sont les bienvenus ?
           </h2>
           <p className="text-ink/70 mb-10 max-w-2xl">
-            Tout professionnel basé en Andalousie, capable d'accompagner des
+            Tout professionnel basé en Andalousie, capable d&apos;accompagner des
             clients francophones dans son domaine.
           </p>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+
+          {/* Artisans & travaux — section mise en avant */}
+          <div className="mb-6 rounded-2xl border-2 border-terracotta/25 bg-terracotta/5 p-6 md:p-8">
+            <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
+              <div className="flex-1">
+                <span className="inline-block rounded-full bg-terracotta/15 px-3 py-0.5 text-xs font-semibold uppercase tracking-widest text-terracotta mb-3">
+                  Secteur prioritaire
+                </span>
+                <h3 className="font-display text-2xl text-forest mb-2">
+                  Artisans & travaux
+                </h3>
+                <p className="text-ink/70 leading-relaxed max-w-lg">
+                  Electriciens, plombiers, architectes, menuisiers, rénovation —
+                  c&apos;est l&apos;une des demandes les plus fréquentes des expatriés qui
+                  s&apos;installent. Les artisans sérieux et francophones sont rares et
+                  très recherchés.
+                </p>
+              </div>
+
+              {/* Partenaire */}
+              <div className="md:w-60 shrink-0 rounded-xl border border-forest/15 bg-white p-5 shadow-sm">
+                <div className="text-xs font-semibold uppercase tracking-widest text-ink/45 mb-2">
+                  Partenaire
+                </div>
+                <div className="font-semibold text-forest mb-1">
+                  Vincent Demonchaux
+                </div>
+                <p className="text-sm text-ink/65 leading-relaxed mb-3">
+                  Menuisier et création bois — artisan francophone à Málaga.
+                </p>
+                <a
+                  href="https://vincentdemonchaux.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm font-semibold text-terracotta hover:underline underline-offset-2"
+                >
+                  Voir le site →
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Autres profils */}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {PROFIL_TYPES.map((p) => (
               <div
                 key={p.titre}
                 className="rounded-xl border border-forest/10 bg-white p-5 hover:border-terracotta/40 hover:shadow-sm transition"
               >
-                <div className="text-3xl mb-3">{p.emoji}</div>
                 <div className="font-semibold text-forest mb-1.5">{p.titre}</div>
                 <p className="text-sm text-ink/65 leading-relaxed">{p.desc}</p>
+                {p.partner && (
+                  <div className="mt-3 pt-3 border-t border-forest/10">
+                    <div className="text-xs font-semibold uppercase tracking-wide text-ink/40 mb-1">
+                      Partenaire
+                    </div>
+                    <a
+                      href={p.partner.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm font-semibold text-terracotta hover:underline underline-offset-2"
+                    >
+                      {p.partner.nom} →
+                    </a>
+                  </div>
+                )}
               </div>
             ))}
           </div>
@@ -81,7 +155,7 @@ export default function ProfessionnelsPage() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {AVANTAGES.map((a) => (
               <div key={a.n} className="flex gap-4">
-                <span className="h-10 w-10 shrink-0 flex items-center justify-center rounded-full bg-terracotta/15 text-terracotta-dark font-display font-bold text-sm">
+                <span className="h-10 w-10 shrink-0 flex items-center justify-center rounded-full bg-terracotta/15 text-terracotta font-display font-bold text-sm">
                   {a.n}
                 </span>
                 <div>
@@ -133,7 +207,7 @@ export default function ProfessionnelsPage() {
                   Profession / spécialité <span className="text-terracotta">*</span>
                 </label>
                 <input
-                  id="pro-profession" name="profession" required placeholder="Avocat en droit des étrangers"
+                  id="pro-profession" name="profession" required placeholder="Menuisier, électricien, agent immo…"
                   className="w-full rounded-md border border-forest/20 bg-cream/50 px-3 py-2.5 focus:outline-none focus:border-terracotta text-sm"
                 />
               </div>
@@ -145,13 +219,13 @@ export default function ProfessionnelsPage() {
                   Email professionnel <span className="text-terracotta">*</span>
                 </label>
                 <input
-                  id="pro-email" name="email" type="email" required placeholder="jean@cabinet-malaga.es"
+                  id="pro-email" name="email" type="email" required placeholder="jean@monactivite.es"
                   className="w-full rounded-md border border-forest/20 bg-cream/50 px-3 py-2.5 focus:outline-none focus:border-terracotta text-sm"
                 />
               </div>
               <div>
                 <label htmlFor="pro-city" className="block text-sm font-semibold text-forest mb-1.5">
-                  Ville(s) d'intervention
+                  Ville(s) d&apos;intervention
                 </label>
                 <input
                   id="pro-city" name="city" placeholder="Málaga, Marbella, toute la province…"
