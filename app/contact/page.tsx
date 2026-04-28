@@ -16,13 +16,14 @@ export default function ContactPage() {
 
       <form
         className="space-y-5 rounded-xl border border-forest/15 bg-white p-5 sm:p-7"
-        action="https://formspree.io/f/REPLACE_ME"
+        action="https://formsubmit.co/proswipe.limpieza@gmail.com"
         method="POST"
-        name="contact"
-        data-netlify="true"
       >
-        <input type="hidden" name="form-name" value="contact" />
-        <p className="hidden"><label>Ne pas remplir : <input name="bot-field" /></label></p>
+        <input type="hidden" name="_subject" value="Nouveau message — Expat Málaga" />
+        <input type="hidden" name="_next" value="https://expatmalaga.org/contact?sent=1" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="text" name="_honey" className="hidden" />
 
         <div>
           <label htmlFor="name" className="block text-sm font-semibold text-forest mb-1.5">

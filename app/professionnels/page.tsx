@@ -195,16 +195,14 @@ export default function ProfessionnelsPage() {
 
           <form
             className="space-y-5 rounded-xl border border-forest/15 bg-white p-6 md:p-8"
-            action="https://formspree.io/f/REPLACE_ME"
+            action="https://formsubmit.co/proswipe.limpieza@gmail.com"
             method="POST"
-            name="professionnels"
-            data-netlify="true"
           >
-            <input type="hidden" name="form-name" value="professionnels" />
-            <input type="hidden" name="form-type" value="professionnel" />
-            <p className="hidden">
-              <label>Ne pas remplir : <input name="bot-field" /></label>
-            </p>
+            <input type="hidden" name="_subject" value="Candidature professionnel — Expat Málaga" />
+            <input type="hidden" name="_next" value="https://expatmalaga.org/professionnels?sent=1" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="text" name="_honey" className="hidden" />
 
             <div className="grid sm:grid-cols-2 gap-5">
               <div>
