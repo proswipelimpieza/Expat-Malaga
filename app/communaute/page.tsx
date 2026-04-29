@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 // 1. Ouvrez votre groupe WhatsApp
 // 2. Nom du groupe → "Ajouter des membres" → "Lien d'invitation"
 // 3. "Copier le lien"  →  collez-le ici
-const WHATSAPP_GROUP_URL = "https://chat.whatsapp.com/VOTRE_LIEN_ICI";
+const WHATSAPP_GROUP_URL = "https://chat.whatsapp.com/EdpbraSDwnfHfAgUAukPeY?mode=gi_t";
 // ────────────────────────────────────────────────────────────────────────────
 
 const isPlaceholder = WHATSAPP_GROUP_URL.includes("VOTRE_LIEN_ICI");
