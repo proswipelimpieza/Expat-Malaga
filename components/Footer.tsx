@@ -78,9 +78,9 @@ export default function Footer() {
               </Link>
             </li>
             <li>
-              <a href="/rss.xml" className="text-sm text-white/60 hover:text-sea transition-colors">
+              <Link href="/rss.xml" className="text-sm text-white/60 hover:text-sea transition-colors">
                 Flux RSS
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

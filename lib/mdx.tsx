@@ -34,12 +34,17 @@ export const mdxComponents = {
   li: (props: React.HTMLAttributes<HTMLLIElement>) => (
     <li {...props} className="leading-relaxed text-ink/90" />
   ),
-  a: (props: React.AnchorHTMLAttributes<HTMLAnchorElement>) => (
-    <a
-      {...props}
-      className="text-terracotta-dark underline underline-offset-2 hover:text-terracotta transition-colors"
-    />
-  ),
+  a: ({ href, ...props }: React.AnchorHTMLAttributes<HTMLAnchorElement>) => {
+    const isExternal = typeof href === "string" && href.startsWith("http");
+    return (
+      <a
+        href={href}
+        {...props}
+        {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+        className="text-terracotta-dark underline underline-offset-2 hover:text-terracotta transition-colors"
+      />
+    );
+  },
   blockquote: (props: React.HTMLAttributes<HTMLQuoteElement>) => (
     <blockquote
       {...props}
