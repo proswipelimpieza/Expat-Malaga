@@ -73,9 +73,9 @@ export default function Footer() {
               </li>
             ))}
             <li>
-              <a href="/sitemap.xml" className="text-sm text-white/60 hover:text-sea transition-colors">
+              <Link href="/plan-du-site" className="text-sm text-white/60 hover:text-sea transition-colors">
                 Plan du site
-              </a>
+              </Link>
             </li>
             <li>
               <a href="/rss.xml" className="text-sm text-white/60 hover:text-sea transition-colors">
