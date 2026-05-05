@@ -2,7 +2,6 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import ArticleCard from "@/components/ArticleCard";
 import CategoryNav from "@/components/CategoryNav";
-import NewsletterBanner from "@/components/NewsletterBanner";
 import { getFeaturedArticles } from "@/lib/articles";
 
 const STARTER_STEPS = [
@@ -274,9 +273,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-      {/* ── NEWSLETTER ──────────────────────── */}
-      <NewsletterBanner />
 
       {/* ── ARTICLES ────────────────────────── */}
       <section className="py-14 bg-sand">
