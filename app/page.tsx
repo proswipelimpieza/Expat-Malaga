@@ -45,9 +45,7 @@ const BAND_STATS = [
 ];
 
 export default function HomePage() {
-  const featured = getFeaturedArticles(12)
-    .filter((a) => a.frontmatter.category !== "actualites")
-    .slice(0, 6);
+  const featured = getFeaturedArticles(6);
 
   return (
     <>

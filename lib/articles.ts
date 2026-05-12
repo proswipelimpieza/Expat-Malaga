@@ -8,8 +8,7 @@ export type Category =
   | "vie-pratique"
   | "villes"
   | "sport"
-  | "travail-visa"
-  | "actualites";
+  | "travail-visa";
 
 export type ArticleFrontmatter = {
   title: string;
@@ -74,13 +73,6 @@ export const CATEGORIES: Record<
       "Autonomo, télétravail, visa nomade digital : travailler depuis l'Espagne.",
     emoji: "💼",
     image: "/images/categories/travail-visa.jpg",
-  },
-  actualites: {
-    label: "Actualités",
-    description:
-      "Le journal de la semaine : changements administratifs, événements, bons plans et actualité des expats en Andalousie.",
-    emoji: "📰",
-    image: "/images/categories/actualites.jpg",
   },
 };
 

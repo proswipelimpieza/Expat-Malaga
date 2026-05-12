@@ -1,4 +1,4 @@
-import { Key, Sun, MapPin, Dumbbell, Briefcase, Newspaper } from "lucide-react";
+import { Key, Sun, MapPin, Dumbbell, Briefcase } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
 export type CategoryIconConfig = {
@@ -13,5 +13,4 @@ export const CATEGORY_ICONS: Record<string, CategoryIconConfig> = {
   villes:         { icon: MapPin,     bg: "bg-forest/10",     color: "text-forest"          },
   sport:          { icon: Dumbbell,   bg: "bg-terracotta/10", color: "text-terracotta-dark"  },
   "travail-visa": { icon: Briefcase,  bg: "bg-forest/10",     color: "text-forest"          },
-  actualites:     { icon: Newspaper,  bg: "bg-terracotta/10", color: "text-terracotta-dark"  },
 };

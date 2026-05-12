@@ -26,7 +26,6 @@ const CATEGORY_FALLBACK: Record<string, string> = {
   villes: "/images/categories/villes.jpg",
   sport: "/images/categories/sport.jpg",
   "travail-visa": "/images/categories/travail-visa.jpg",
-  actualites: "/images/categories/actualites.jpg",
 };
 
 const ULTIMATE_FALLBACK = "/images/hero/malaga-beach.jpg";

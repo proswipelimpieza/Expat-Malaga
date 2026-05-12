@@ -9,7 +9,6 @@ const CATEGORY_LABELS: Record<string, string> = {
   villes: "Villes",
   sport: "Sport",
   "travail-visa": "Travail & Visa",
-  actualites: "Actualités",
 };
 
 export async function GET(request: NextRequest) {

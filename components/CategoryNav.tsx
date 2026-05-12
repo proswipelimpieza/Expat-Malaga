@@ -14,13 +14,12 @@ export default function CategoryNav() {
             Explorer par thème
           </h2>
           <p className="text-base text-ink-soft max-w-md mx-auto">
-            Cinq rubriques pour tout savoir avant de poser vos valises.
+            Cinq rubriques pour tout savoir avant de poser vos valises en Andalousie.
           </p>
         </div>
 
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
           {(Object.keys(CATEGORIES) as Array<keyof typeof CATEGORIES>)
-            .filter((key) => key !== "actualites")
             .map((key) => {
               const cat = CATEGORIES[key];
               const cfg = CATEGORY_ICONS[key];

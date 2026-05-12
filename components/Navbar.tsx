@@ -10,7 +10,6 @@ const navLinks = [
   { href: "/categorie/villes", label: "Villes" },
   { href: "/categorie/sport", label: "Sport" },
   { href: "/categorie/travail-visa", label: "Travail & Visa" },
-  { href: "/categorie/actualites", label: "Actualités" },
   { href: "/professionnels", label: "Professionnels" },
 ];
 
